@@ -14,7 +14,7 @@ import { EmpleadosComponent } from './Componentes/empleados/empleados.component'
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    EmpleadosComponent
+    EmpleadosComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
