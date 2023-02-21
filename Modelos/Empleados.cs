@@ -7,9 +7,9 @@ namespace RegistroProductos.Modelos
     {
         [Key]
         public int EmpleadoId { get; set; }
-        public String Nombres { get; set; }
-        public String Apellidos { get; set; }
-        public String Celular { get; set; }
-        public String Direccion { get; set; }
+        public String? Nombres { get; set; }
+        public String? Apellidos { get; set; }
+        public String? Celular { get; set; }
+        public String? Direccion { get; set; }
     }
 }

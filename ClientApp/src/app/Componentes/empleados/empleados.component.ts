@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { EmpleadosService } from 'src/app/service/empleados.service';
 
 @Component({
   selector: 'app-empleados',
@@ -7,15 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class EmpleadosComponent implements OnInit {
 
-  http = Inject(HttpClientModule)
-
-  constructor() { }
+  constructor(private empleadoService: EmpleadosService) { }
 
   ngOnInit(): void {
   }
   
-  getEmpleados(){
-
-  }
 
 }

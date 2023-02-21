@@ -5,7 +5,7 @@ using RegistroProductos.Modelos;
 
 namespace RegistroProductos.Controller
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class EmpleadosController : ControllerBase
     {
@@ -16,13 +16,13 @@ namespace RegistroProductos.Controller
             _contexto= contexto;    
         }
 
-        [HttpGet]
+        [HttpGet("GetEmpleados")]
         public async Task<ActionResult<IEnumerable<Empleados>>> GetEmpleados()
         {
             return await _contexto.Empleados.ToListAsync();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("BuscarEmpleados/{id}")]
         public async Task<ActionResult<Empleados>> GetEmpleados(int id)
         {
             var empleados = await _contexto.Empleados.FindAsync(id);
@@ -35,7 +35,7 @@ namespace RegistroProductos.Controller
             return empleados;
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("PutEmpleados{id}")]
         public async Task<IActionResult> PutEmpleados(int id, Empleados empleados)
         {
             if (id != empleados.EmpleadoId)
@@ -64,7 +64,7 @@ namespace RegistroProductos.Controller
             return NoContent();
         }
 
-        [HttpPost]
+        [HttpPost("PostEmpleados")]
         public async Task<ActionResult<Empleados>> PostEmpleados(Empleados empleados)
         {
             _contexto.Empleados.Add(empleados);
@@ -73,7 +73,7 @@ namespace RegistroProductos.Controller
             return CreatedAtAction("GetEmpleados", new { id = empleados.EmpleadoId }, empleados);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteEmpleados/{id}")]
         public async Task<IActionResult> DeleteEmpleados(int id)
         {
             var empleados = await _contexto.Empleados.FindAsync(id);

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { EmpleadosComponent } from './Componentes/empleados/empleados.component';
+import { EmpleadosService } from './service/empleados.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { EmpleadosComponent } from './Componentes/empleados/empleados.component'
       { path:  'registroEmpleado', component: EmpleadosComponent}
     ])
   ],
-  providers: [],
+  providers: [
+    EmpleadosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
